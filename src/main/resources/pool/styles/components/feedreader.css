@@ -1,0 +1,150 @@
+.wgtFeedReaderIconBar {
+	border-bottom: 1px solid #cccccc;	
+}
+
+.wgtFeedReaderIconBar .wgtFeedReaderIcon {
+	padding-left: 6px;
+}
+
+.wgtFeedReaderIconBar .wgtFeedReaderIconHome {
+	padding-left: 1px;
+}
+
+.wgtFeedReaderIconBar td {
+    text-align: center;	
+}
+
+#tooltip {
+	width: 250px;
+	background-color: red;
+}
+
+.wgtFeedReaderContainer {
+	margin-top: 0pt; 
+	overflow-y: auto;
+} 
+
+.wgtFeedReaderContainerFooter {
+    height: 20px;
+}
+
+.wgtFeedReaderTitle {
+    font-weight: bold; 
+    color: #FFFFFF;
+}
+
+.wgtFeedReaderTitleBar {
+    background-color: #0099FF;
+    display: block; 
+    width: 100%; 
+    margin-left:-2px; 
+    padding-left:3px;
+}
+
+.wgtFeedReaderHeaderNavigation {
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.wgtFeedReaderHeaderNavigation td {
+    vertical-align: bottom;
+}
+
+.wgtFeedReaderFooterNavigation {
+}
+
+.wgtFeedReaderFooterNavigation td {
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.wgtFeedReaderTextNotification {
+    font-weight: bold; 
+    font-size: 10pt;
+    color: #000000;
+    padding-left: 2px;
+}
+
+.wgtFeedReaderFeedView {
+	display: block;
+    overflow-y: auto;
+}
+
+.wgtFeedReaderFeedViewContainer {
+	background-color: #F5F7F9; 
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.wgtFeedReaderFeedViewContainer td {
+    width: 250px; 
+    text-align: center;
+}
+
+.wgtFeedReaderFeedViewContainerOdd {
+	background-color: #F5F7F9; 
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.wgtFeedReaderFeedViewContainerOdd td {
+	width: 250px; 
+	text-align: center;
+}
+
+.wgtFeedReaderFeedViewButton {
+    font-weight: bold; 
+    font-size: 10pt; 
+    display: block; 
+    text-decoration: none; 
+    color: #000000;
+}
+
+.wgtFeedReaderItemView {
+
+}
+
+.wgtFeedReaderItemViewContainer {
+    background-color: #F5F7F9; 
+    border-bottom: 1px solid #CCCCCC; 
+}
+
+.wgtFeedReaderItemViewContainerNew {
+    background-image: url('../images/components/feedreader/bg_new.gif'); 
+    border-bottom: 1px solid #CCCCCC; 
+}
+
+.wgtFeedReaderItemViewContainerOdd {
+    background-color: #F5F7F9; 
+    border-bottom: 1px solid #CCCCCC; 
+}
+
+.wgtFeedReaderItemViewContainerOddNew {
+    background-image: url('../images/components/feedreader/bg_new.gif'); 
+    border-bottom: 1px solid #CCCCCC;   
+}
+
+.wgtFeedReaderItemViewButton {
+    text-decoration: none; 
+    color: #000000; 
+    display: block;
+}
+
+.wgtFeedReaderItemDetailViewButton {
+    font-weight: bold; 
+    text-decoration: none; 
+    color: #000000;
+}
+
+.wgtFeedReaderItemDetailViewDescription {
+    display: block;
+    overflow-y: auto;	
+}
+
+/*
+Setzen der min-height
+*/  
+* html .wgtFeedReaderTabContent { 
+    
+}
+
+.wgtFeedReaderTabContent { 
+    
+}

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+   <properties>
+      <title>Gui Components</title>
+      <author email="martin.hermann@infoserve.endress.com">Martin Hermann</author>
+   </properties>
+<!-- 
+The following attributes are supported for the <release> element:
+
+version			Required	Name of the version in which the changes occur. For each change, add a nested <action> element as described below.
+date			Required	Date at which the version was released. You can use a free form comment such as "in SVN" for unreleased versions.
+description		Optional	An optional description of the release. This is used in the overview table of releases. Note: In releases prior to 2.0-beta-2 this was called desc. It was changed to improve compatibility with the Maven 1 changes plugin.
+
+The following attributes are supported for the <action> element:
+
+dev				Required	Name of developer who committed the change. This must be the name of the developer as described in the developers section of the pom.xml file.
+type			Required	Type of change. There are four valid values: add, fix, remove, update.
+issue			Optional	Id of the issue related to this change. This is the id in your issue tracking system.
+							The Changes plugin will generate a URL out of this id. The URL is constructed using the value of the issueLinkTemplate parameter. See the changes-report mojo for more details.
+due-to			Optional	Name of the person to be credited for this change. This can be used when a patch is submitted by a non-committer.
+due-to-email	Optional	Email of the person to be credited for this change.
+ -->
+	<body>
+	<release version="01.03.11" date="2011-XX-XX" description="Additional Components">
+	    <action dev="sattlera" type="add" date="2011-09-06">
+            Added DetailedMessageDialog
+        </action>
+	    <action dev="sattlera" type="update" date="2011-08-12">
+            AsynchronousProcessDialog now can hide item text or progress bar
+        </action>
+	    <action dev="sattlera" type="add" date="2011-08-08">
+            Added SortableAssortmentTablesWidget
+        </action>
+	    <action dev="sattlera" type="update" date="2011-06-21">
+            Updated Pocket-Mode and Selection-Mode to calendar-widget
+        </action>
+		<action dev="schweizerg" type="add" date="2011-05-18" >
+			Added DynamicDBTableView for reading and editing Tables from Databases.
+		</action>
+	</release>
+	<release version="01.03.06" date="2010-XX-XX" description="Additional Components">
+	    <action dev="sattlera" type="add" date="2010-08-20">
+            Added mandatory ID attribute to AssortmentTablesWidget
+        </action>
+		<action dev="kaiserw" type="update" date="2010-08-06">
+			Updated DocumentStore to version 01.01.01.
+		</action>
+		<action dev="kaiserw" type="update" date="2010-08-06">
+			Updated WGT to version 01.03.07.
+		</action>
+		<action dev="kaiserw" type="update" date="2010-08-06">
+			Updated parent POM to version 02.00.12 (final).
+		</action>
+		<action dev="kaiserw" type="update" date="2010-07-19">
+			Define dependency to WGT as provided so it is not automatically inherited by projects refering to the GUI components library.
+		</action>
+		<action dev="klugb" type="fix" date="2010-05-14">
+			MailTo Sendbutton label fix
+		</action>
+		<action dev="salhit" type="fix" date="2010-04-24">
+			Addition of ids for Selenium tests
+		</action>
+	</release>
+	<release version="01.03.04" date="2010-XX-XX" description="Additional Components">
+		<action dev="klugb" type="fix" date="2010-04-14">
+			Parent Pom update to 02.00.09
+		</action>
+		<action dev="klugb" type="fix" date="2010-04-14">
+			Document Store update to 01.01.00-SNAPSHOT
+		</action>
+		<action dev="klugb" type="fix" date="2010-04-14">
+			Document Store API changes adapted to explorer view
+		</action>	
+	</release>
+	<release version="01.03.03" date="2010-XX-XX" description="Additional Components" />
+	<release version="01.03.02" date="2010-XX-XX" description="Additional Components">
+	</release>
+		<release version="01.03.01" date="2010-01-12" description="Additional Components">
+            <action dev="klugb" type="fix" date="2010-01-12">
+                WGT version 01.03.01 is used
+            </action>		
+            <action dev="klugb" type="fix" date="2010-01-12">
+                TableMenu: enabled Labels for entries without a listener
+            </action>
+            <action dev="sattlera" type="add" date="2010-01-08">
+                New component: Feed Reader
+            </action>
+        </release>
+	   <release version="01.03.00" date="2009-11-17" description="New Release">
+            <action dev="hermannm" type="add" date="2009-11-17">
+                Now useing wgt 01.03.00
+            </action>
+        </release>
+	   <release version="01.02.01" date="2009-09-19" description="New Release">
+            <action dev="kaiserw" type="update" date="2009-09-02">
+            Use fully-qualified server name for isw600.
+            </action>
+            <action dev="sattlera" type="add" date="2009-08-31">
+                New component: Assortment Tables
+            </action>
+        </release>
+        <release version="01.02.00" date="2009-03-19" description="Third Release">
+            <action dev="hermannm" type="update" date="2009-07-10">
+                Updated webguitoolkit-ui dependency to 01.02.00 (release)
+            </action>
+            <action dev="hermannm" type="update" date="2009-06-18">
+                Updated to new WGT version and removed compiler errors
+            </action>
+        </release>
+		<release version="01.01.00" date="2009-03-19" description="Second Realease">
+			<action dev="klugb" type="add" date="2009-04-17"> New component:
+				TableLayoutMenu</action>
+		</release>
+		<release version="01.00.00" date="2009-03-19" description="First Realease">
+			<action dev="hermannm" type="add" date="2009-03-13"> Added changes and site
+				generation.</action>
+		</release>
+	</body>
+</document>

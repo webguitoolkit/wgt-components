@@ -1,0 +1,130 @@
+.wgt_cal_table {
+	border-top: 1px solid #999;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+	font-size: 14px;
+}
+
+.wgt_cal_table_header_cell_first {
+	border-left: 1px solid #999;
+	height: 20px;
+	text-align: center;
+}
+
+.wgt_cal_table_header_cell {
+	border-left: 1px solid #999;
+	height: 20px;
+	text-align: center;
+}
+
+.wgt_cal_table_cell_month {
+	border-top: 1px solid #999;
+	border-left: 1px solid #999;
+	height: 60px;
+}
+
+.wgt_cal_table_cell_year {
+	border-top: 1px solid #999;
+	border-left: 1px solid #999;
+	height: 25px;
+}
+
+.wgt_cal_table_cell_actual {
+	background-color: #DDDDDD;
+}
+
+.wgt_cal_table_cell_date {
+	height: 15px;
+	text-align: right;
+	color: #999;
+	vertical-align: top;
+}
+
+.wgt_cal_table_cell_date_actual {
+	color: black;
+	font-weight: bold;
+}
+
+.wgt_cal_table_cell_add {
+	text-align: left;
+	vertical-align: top;
+	height: 25px;
+}
+
+.wgt_cal_table_cell_add_img {
+	display: none;
+	cursor: pointer;
+}
+
+.wgt_cal_table_month_label {
+	font-size: 14px;
+	font-weight: bold;
+	font-family: "Verdana", Verdana, sans-serif;
+}
+
+.wgt_cal_table_cell_add_content {
+	text-align: right;
+	vertical-align: bottom;
+	height: 20px;
+}
+
+.wgt_cal_table_buttons {
+	cursor: pointer;
+}
+.wgt_cal_table_day_of_week1 {
+	/* sunday */
+    background-color: #cccccc;
+}
+.wgt_cal_table_day_of_week2 {
+}
+.wgt_cal_table_day_of_week3 {
+}
+.wgt_cal_table_day_of_week4 {
+}
+.wgt_cal_table_day_of_week5 {
+}
+.wgt_cal_table_day_of_week6 {
+}
+.wgt_cal_table_day_of_week7 {
+	/* saturday */
+    background-color: #cccccc;
+}
+
+div.wgt_cal_table_event {
+	background-color: #0099FF;
+	color: #FFFFFF;
+	overflow: hidden;
+	white-space: nowrap;
+	cursor: pointer;
+	padding: 2px 2px 2px 2px;
+	vertical-align: middle;
+}
+
+.wgt_cal_table_month_label_pocket {
+	font-size: 11px;
+	font-weight: bold;
+    font-family: "Verdana", Verdana, sans-serif;
+}
+
+.wgt_cal_pocket {
+    height: 12px !important;
+    line-height: 1px;
+    padding-top: 4px;
+    text-align: right;
+}
+
+.wgt_cal_selection {
+	cursor: pointer;
+}
+
+.highlighted {/*166, 202, 240*/
+    background-color: #A6CAF0;
+}
+
+.highlighted td {
+    color: #FFFFFF !important;
+}
+
+.cursorDefault {
+    cursor: default;
+}

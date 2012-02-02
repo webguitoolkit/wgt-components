@@ -1,0 +1,4 @@
+.processDialogBarLayout{width:100%;}
+.processDialogBarLabel{position: relative; top: -16px; margin-left: 98px;}
+.processDialogBarUnprocessed{width:99%;height:20px;border:1px solid #BBBBBB;background:#DDDDDD url(../images/wgt/bg-button.gif) repeat-x scroll 0 0;}
+.processDialogBarProcessed{width:1px;height:20px;background-color: blue;background:#B0D6FA url(../images/wgt/table/tdheader.gif) repeat-x scroll center top;}
