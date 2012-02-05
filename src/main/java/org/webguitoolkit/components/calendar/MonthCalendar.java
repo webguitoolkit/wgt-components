@@ -109,7 +109,6 @@ public class MonthCalendar extends Calendar {
 			dayOffset = dayOffset + 7;
 
 		int maximumDaysInMonth = calendar.getActualMaximum(java.util.Calendar.DATE);
-
 		for (int i = 0; i < 6; i++) {
 			TR tr = new TR();
 
@@ -139,14 +138,14 @@ public class MonthCalendar extends Calendar {
 				Collection<CalendarEvent> events = getModel().getAllEventsForDate(getCurrentYear(), getCurrentMonth(), date,
 						getModel().getTimeZone());
 
-				TD td = new TD();
-				td.setWidth(getSingleCellWidth());
+				TD dayCell = new TD();
+				dayCell.setWidth(getSingleCellWidth());
 				if (getSingleCellHeight() > 0) {
-					td.setHeight(getSingleCellHeight());
+					dayCell.setHeight(getSingleCellHeight());
 				}
 
-				// if current day
 				String cellStyle;
+				// if current day
 				if (getActualDay() != -1 && getActualDay() == date) {
 					cellStyle = CAL_TABLE_CELL + " " + CAL_TABLE_CELL_ACTUAL;
 				}
@@ -160,8 +159,8 @@ public class MonthCalendar extends Calendar {
 					cellStyle += " " + CAL_TABLE_SELECTION;
 
 					if (fireClickEvent) {
-						td.setOnClick("calSelectDate('" + getId() + "','" + getCurrentYear() + "','" + getCurrentMonth()
-								+ "','" + date + "',this);");
+						dayCell.setOnClick("calSelectDate('" + getId() + "','" + getCurrentYear() + "','" + getCurrentMonth() + "','"
+								+ date + "',this);");
 					}
 					else {
 						cellStyle += " cursorDefault";
@@ -170,47 +169,49 @@ public class MonthCalendar extends Calendar {
 				if (isDaySelected(date)) {
 					cellStyle += " " + CAL_TABLE_CELL_HIGHLIGHTED;
 				}
-				td.setClass(cellStyle);
+				dayCell.setClass(cellStyle);
+				dayCell.setID(cellId);
 
-				td.setID(cellId);
 				// only show plus icon if date is part of month, max events not reached...
 				// further, check if flag addEventsInPast is false and current date is in past -> no plus icon
+				boolean isCursorDefault = false;
 				if (isDatePartOfMonth && events.toArray().length < maxEventPerDays) {
 
 					if (!selectionMode && getEditMode() == EDITMODE_ADD_ANYWHERE
 							|| (getEditMode() == EDITMODE_DONT_ADD_IN_PAST && !isDateInPast(cellCal))) {
 						// show plus icon
-						td.setOnMouseOver("jQuery('#" + cellId + "_addicon" + "').show(0);");
-						td.setOnMouseOut("jQuery('#" + cellId + "_addicon" + "').hide(0);");
+						dayCell.setOnMouseOver("jQuery('#" + cellId + "_addicon" + "').show(0);");
+						dayCell.setOnMouseOut("jQuery('#" + cellId + "_addicon" + "').hide(0);");
 					}
 					else {
-						td.setOnMouseOver("");
-						td.setOnMouseOut("");
+						dayCell.setOnMouseOver("");
+						dayCell.setOnMouseOut("");
 					}
 
-					td.setBgColor("#FFFFFF");
+					dayCell.setBgColor("#FFFFFF");
 
 				}
 				else if (isDatePartOfMonth && events.toArray().length >= maxEventPerDays) {
-					td.setOnMouseOver("");
-					td.setOnMouseOut("");
-					td.setBgColor("#FFFFFF");
+					dayCell.setOnMouseOver("");
+					dayCell.setOnMouseOut("");
+					dayCell.setBgColor("#FFFFFF");
 				}
 				else {
-					td.setOnMouseOver("");
-					td.setOnMouseOut("");
-					td.setBgColor("#EEEEEE");
+					dayCell.setOnMouseOver("");
+					dayCell.setOnMouseOut("");
+					dayCell.setBgColor("#EEEEEE");
 
 					// blank cells (with no date) should not be selectable at all!
 					if (selectionMode) {
-						td.setStyle("cursor: default;");
-						td.setOnClick("");
+						dayCell.setStyle("cursor: default;");
+						dayCell.setOnClick("");
+						isCursorDefault = true;
 					}
 				}
 
 				// Inner Cell Table
 				cellContentTable = new Table();
-				td.addElement(cellContentTable);
+				dayCell.addElement(cellContentTable);
 
 				cellContentTable.setHeight("100%");
 				cellContentTable.setWidth("100%");
@@ -260,6 +261,20 @@ public class MonthCalendar extends Calendar {
 				}
 				else {
 					cTD.addElement("");
+				}
+
+				// set specific cell-style
+				if (isDatePartOfMonth && getActualDay() != date) {
+					String styleForDate = getModel().getStyleForDate(getCurrentYear(), getCurrentMonth(), date);
+
+					if (styleForDate != null) {
+						// for non-clickable cells in selection mode we also have to set the cursor to default explicitly
+						if (isCursorDefault) {
+							styleForDate += " cursor: default;";
+						}
+
+						dayCell.setStyle(styleForDate);
+					}
 				}
 
 				// Add empty events
@@ -380,7 +395,7 @@ public class MonthCalendar extends Calendar {
 					}
 				}
 
-				tr.addElement(td);
+				tr.addElement(dayCell);
 				idCnt++;
 			}
 			table.addElement(tr);
@@ -479,5 +494,4 @@ public class MonthCalendar extends Calendar {
 	protected String getLastPageLabel() {
 		return "calendar.last.month@Last Month";
 	}
-
 }

@@ -17,6 +17,15 @@ public interface ICalendarModel {
 	 */
 	Collection<CalendarEvent> getAllEventsForDate(int year, int month, int date, TimeZone timeZone);
 
+	/**
+	 * This method returns all styles for a specified date (year, month, date)<br>
+	 * 
+	 * @param year e.g. 2010
+	 * @param month e.g. 11 for November
+	 * @param date e.g. 12
+	 * @return style for the specified date as CSS-string
+	 */
+	public String getStyleForDate(int year, int month, int date);
 
 	/**
 	 * 

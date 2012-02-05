@@ -1,218 +1,229 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <parent>
-        <groupId>org.webguitoolkit.maven</groupId>
-        <artifactId>wgt-project-template</artifactId>
-        <version>01.00.00</version>
-    </parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>org.webguitoolkit.maven</groupId>
+		<artifactId>wgt-project-template</artifactId>
+		<version>01.00.00</version>
+	</parent>
 
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.webguitoolkit.components</groupId>
-    <artifactId>webguitoolkit-components</artifactId>
-    <name>GuiComponents</name>
-    <version>01.03.16-SNAPSHOT</version>
-    <description>Additional views for the WGT</description>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.webguitoolkit.components</groupId>
+	<artifactId>webguitoolkit-components</artifactId>
+	<name>GuiComponents</name>
+	<version>01.03.16-SNAPSHOT</version>
+	<description>Additional views for the WGT</description>
 
-    <developers>
-        <developer>
-            <id>zaretzkep</id>
-            <name>Peter Zaretzke</name>
-            <email>peter@17sprints.de</email>
-            <roles>
-              <role>Developer</role>
-            </roles>
-            <organization>17sprints GmbH</organization>
-        </developer>
-        <developer>
-            <id>hermannm</id>
-            <name>Martin Hermann</name>
-            <email>martin.hermann@infoserve.endress.com</email>
-            <roles>
-              <role>Developer</role>
-            </roles>
-            <organization>Endress+Hauser</organization>
-        </developer>
-	    <developer>
-	      <id>klugb</id>
-	      <name>Benjamin Klug</name>
-	      <email>benjamin.klug@infoserve.endress.com</email>
-	      <roles>
-	        <role>Developer</role>
-	      </roles>
-	      <organization>Endress+Hauser</organization>
-	    </developer>
-    </developers>
+	<developers>
+		<developer>
+			<id>zaretzkep</id>
+			<name>Peter Zaretzke</name>
+			<email>peter@17sprints.de</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<organization>17sprints GmbH</organization>
+		</developer>
+		<developer>
+			<id>hermannm</id>
+			<name>Martin Hermann</name>
+			<email>martin.hermann@infoserve.endress.com</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<organization>Endress+Hauser</organization>
+		</developer>
+		<developer>
+			<id>klugb</id>
+			<name>Benjamin Klug</name>
+			<email>benjamin.klug@infoserve.endress.com</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<organization>Endress+Hauser</organization>
+		</developer>
+	</developers>
 
-    <properties>
-        <prop.project.root.dir>${basedir}</prop.project.root.dir>
-        <prop.project.group>Commons</prop.project.group>
-        <prop.project.name>${project.name}</prop.project.name>
-        <prop.site.generateReports>true</prop.site.generateReports>
-        <prop.javadoc.attach-javadocs>true</prop.javadoc.attach-javadocs>
-        <prop.source.generateSourceJar>true</prop.source.generateSourceJar>
-        <prop.jar.skipTestjar>true</prop.jar.skipTestjar>
-        <prop.test.skip>false</prop.test.skip>
-        <prop.aspectj.excludes>**/*</prop.aspectj.excludes>
-        <prop.java.sourceversion>1.5</prop.java.sourceversion>
-        <prop.java.targetversion>1.5</prop.java.targetversion>
-    </properties>
-    
-    <scm>
-        <connection>scm:svn:http://isw600.infoserve.endress.com/svn/Commons/GuiComponents/trunk/GuiComponents</connection>
-        <developerConnection>scm:svn:http://isw600.infoserve.endress.com/svn/Commons/GuiComponents/trunk/GuiComponents</developerConnection>
-        <url>scm:svn:http://isw600.infoserve.endress.com/svn/Commons/GuiComponents/tags/webguitoolkit-components-01.01.00</url>
-    </scm>
+	<properties>
+		<prop.project.root.dir>${basedir}</prop.project.root.dir>
+		<prop.project.group>Commons</prop.project.group>
+		<prop.project.name>${project.name}</prop.project.name>
+		<prop.site.generateReports>true</prop.site.generateReports>
+		<prop.javadoc.attach-javadocs>true</prop.javadoc.attach-javadocs>
+		<prop.source.generateSourceJar>true</prop.source.generateSourceJar>
+		<prop.jar.skipTestjar>true</prop.jar.skipTestjar>
+		<prop.test.skip>false</prop.test.skip>
+		<prop.aspectj.excludes>**/*</prop.aspectj.excludes>
+		<prop.java.sourceversion>1.5</prop.java.sourceversion>
+		<prop.java.targetversion>1.5</prop.java.targetversion>
+	</properties>
 
-    <dependencies> 
-	    <dependency>
-	    	<groupId>com.googlecode.charts4j</groupId>
-	    	<artifactId>charts4j</artifactId>
-	    	<version>1.0.0</version>
-	    	<optional>false</optional>
-	    </dependency>	    
-	    <!--
-	    <dependency>
-	    	<groupId>org.webguitoolkit.tools.document</groupId>
-	    	<artifactId>wgt-document-repository</artifactId>
-	    	<version>0.9.5</version>
-	    	<optional>false</optional>
-	    </dependency>-->
-	    <dependency>
-      		<groupId>org.webguitoolkit.tools.document</groupId>
-      		<artifactId>eh-document_store</artifactId>
-      		<version>01.01.01</version>
-      		<exclusions>
-      			<exclusion>
-      				<groupId>commons-logging</groupId>
-      				<artifactId>commons-logging</artifactId>
-      			</exclusion>
-      		</exclusions>
-    	</dependency>
-	    <dependency>
-	      <groupId>rome</groupId>
-	      <artifactId>rome</artifactId>
-	      <version>1.0</version>
-	    </dependency>
-	    <dependency>
-	    	<groupId>org.webguitoolkit.ui</groupId>
-	    	<artifactId>webguitoolkit-ui</artifactId>
-	    	<version>01.03.17-SNAPSHOT</version>
-	    	<optional>false</optional>
-	    	<scope>provided</scope>
-	    </dependency>
-    </dependencies>
-    
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.endress.infoserve.commons.maven</groupId>
-        <artifactId>project-template-dependencies</artifactId>
-        <version>02.01.05</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-    
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>net.alchim31.maven</groupId>
-                <artifactId>yuicompressor-maven-plugin</artifactId>
-                <version>0.9</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compress</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <suffix>.min</suffix>
-                    <excludes>
-                        <exclude>**/*.min.js</exclude>
-                        <exclude>**/*.min.css</exclude>
-                        <exclude>**/*.xml</exclude>
-                        <exclude>**/*.png</exclude>
-                        <exclude>**/*.html</exclude>
-                        <exclude>**/*.gif</exclude>
-                    </excludes>
-                    <linebreakpos>200</linebreakpos>
-                    <sourceDirectory>src/main/resources</sourceDirectory>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/webguitoolkit/wgt-components/issues</url>
+	</issueManagement>
 
-  <reporting>
-    <plugins>
-      <plugin>
-        <artifactId>maven-changes-plugin</artifactId>
-        <version>2.3</version>
-        <configuration>
-          <issueLinkTemplate>http://isw600.infoserve.endress.com:70/redmine/issues/show/%ISSUE%</issueLinkTemplate>
-          <toAddresses>
-            <toAddress implementation="java.lang.String">thorsten.springhart@infoserve.endress.com</toAddress>
-            <toAddress implementation="java.lang.String">martin.hermann@infoserve.endress.com</toAddress>
-            <toAddress implementation="java.lang.String">benjamin.klug@infoserve.endress.com</toAddress>
-            <toAddress implementation="java.lang.String">alexander.sattler@infoserve.endress.com</toAddress>
-            <toAddress implementation="java.lang.String">dirk.mueller@infoserve.endress.com</toAddress>
-            <toAddress implementation="java.lang.String">lars.broessler@infoserve.endress.com</toAddress>
-            <toAddress implementation="java.lang.String">peter@17sprints.de</toAddress>
-          </toAddresses>          
-        </configuration>
-        <reportSets>
-          <reportSet>
-            <reports>
-              <report>changes-report</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-      <plugin>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.2</version>
-        <configuration>
-          <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
-          <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
-        </configuration>
-        <reportSets>
-          <reportSet>
-            <reports>
-              <report>index</report>
-              <report>project-team</report>
-              <report>issue-tracking</report>
-              <report>scm</report>
-              <report>dependencies</report>
-              <report>cim</report>
-              <report>summary</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-      <plugin>
-        <artifactId>maven-changelog-plugin</artifactId>
-        <version>2.2</version>
-        <reportSets>
-          <reportSet>
-            <id>dual-report</id>
-            <configuration>
-              <type>range</type>
-              <range>180</range>
-              <displayFileDetailUrl>http://isw600.infoserve.endress.com/svn/%FILE%</displayFileDetailUrl>
-            </configuration>
-            <reports>
-              <report>dev-activity</report>
-              <report>file-activity</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>taglist-maven-plugin</artifactId>
-        <version>2.4</version>
-      </plugin>
-    </plugins>
-  </reporting>
+	<scm>
+		<connection>scm:git:git@github.com:webguitoolkit/wgt-components.git</connection>
+		<developerConnection>scm:git:git@github.com:webguitoolkit/wgt-components.git</developerConnection>
+		<url>git@github.com:webguitoolkit/wgt-components.git</url>
+	</scm>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.googlecode.charts4j</groupId>
+			<artifactId>charts4j</artifactId>
+			<version>1.0.0</version>
+			<optional>false</optional>
+		</dependency>
+		<!-- <dependency> <groupId>org.webguitoolkit.tools.document</groupId> <artifactId>wgt-document-repository</artifactId> 
+			<version>0.9.5</version> <optional>false</optional> </dependency> -->
+		<dependency>
+			<groupId>org.webguitoolkit.tools.document</groupId>
+			<artifactId>eh-document_store</artifactId>
+			<version>01.01.01</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>rome</groupId>
+			<artifactId>rome</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webguitoolkit.ui</groupId>
+			<artifactId>webguitoolkit-ui</artifactId>
+			<version>01.03.17-SNAPSHOT</version>
+			<optional>false</optional>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.webguitoolkit.maven</groupId>
+				<artifactId>wgt-project-template</artifactId>
+				<version>01.00.00</version>
+			</dependency>
+		</dependencies>
+
+		<!-- <dependencies> <dependency> <groupId>com.endress.infoserve.commons.maven</groupId> 
+			<artifactId>project-template-dependencies</artifactId> <version>02.01.05</version> 
+			<type>pom</type> <scope>import</scope> </dependency> </dependencies> -->
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>yuicompressor-maven-plugin</artifactId>
+				<version>0.9</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compress</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<suffix>.min</suffix>
+					<excludes>
+						<exclude>**/*.min.js</exclude>
+						<exclude>**/*.min.css</exclude>
+						<exclude>**/*.xml</exclude>
+						<exclude>**/*.png</exclude>
+						<exclude>**/*.html</exclude>
+						<exclude>**/*.gif</exclude>
+					</excludes>
+					<linebreakpos>200</linebreakpos>
+					<sourceDirectory>src/main/resources</sourceDirectory>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<artifactId>maven-changes-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<issueLinkTemplate>http://isw600.infoserve.endress.com:70/redmine/issues/show/%ISSUE%</issueLinkTemplate>
+					<toAddresses>
+						<toAddress implementation="java.lang.String">thorsten.springhart@infoserve.endress.com</toAddress>
+						<toAddress implementation="java.lang.String">martin.hermann@infoserve.endress.com</toAddress>
+						<toAddress implementation="java.lang.String">benjamin.klug@infoserve.endress.com</toAddress>
+						<toAddress implementation="java.lang.String">alexander.sattler@infoserve.endress.com</toAddress>
+						<toAddress implementation="java.lang.String">dirk.mueller@infoserve.endress.com</toAddress>
+						<toAddress implementation="java.lang.String">lars.broessler@infoserve.endress.com</toAddress>
+						<toAddress implementation="java.lang.String">peter@17sprints.de</toAddress>
+					</toAddresses>
+				</configuration>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>changes-report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<plugin>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+					<dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+				</configuration>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>index</report>
+							<report>project-team</report>
+							<report>issue-tracking</report>
+							<report>scm</report>
+							<report>dependencies</report>
+							<report>cim</report>
+							<report>summary</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<plugin>
+				<artifactId>maven-changelog-plugin</artifactId>
+				<version>2.2</version>
+				<reportSets>
+					<reportSet>
+						<id>dual-report</id>
+						<configuration>
+							<type>range</type>
+							<range>180</range>
+							<displayFileDetailUrl>http://isw600.infoserve.endress.com/svn/%FILE%</displayFileDetailUrl>
+						</configuration>
+						<reports>
+							<report>dev-activity</report>
+							<report>file-activity</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>taglist-maven-plugin</artifactId>
+				<version>2.4</version>
+			</plugin>
+		</plugins>
+	</reporting>
 
 </project>
