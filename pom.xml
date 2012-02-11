@@ -9,9 +9,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.webguitoolkit.components</groupId>
 	<artifactId>webguitoolkit-components</artifactId>
-	<name>GuiComponents</name>
+	<name>wgt-components</name>
 	<version>01.03.16-SNAPSHOT</version>
-	<description>Additional views for the WGT</description>
+	<description>Additional tools and gadgets for WGT</description>
 
 	<developers>
 		<developer>
@@ -129,7 +129,7 @@
 			<plugin>
 				<groupId>net.alchim31.maven</groupId>
 				<artifactId>yuicompressor-maven-plugin</artifactId>
-				<version>0.9</version>
+				<version>1.1</version>
 				<executions>
 					<execution>
 						<goals>
@@ -226,4 +226,5 @@
 		</plugins>
 	</reporting>
 
+	<url>https://webguitoolkit@github.com/webguitoolkit/wgt-components.git</url>
 </project>
