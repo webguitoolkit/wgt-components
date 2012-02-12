@@ -8,7 +8,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.webguitoolkit.components</groupId>
-	<artifactId>webguitoolkit-components</artifactId>
+	<artifactId>wgt-components</artifactId>
 	<name>wgt-components</name>
 	<version>01.03.16-SNAPSHOT</version>
 	<description>Additional tools and gadgets for WGT</description>
@@ -72,15 +72,15 @@
 		<dependency>
 			<groupId>com.googlecode.charts4j</groupId>
 			<artifactId>charts4j</artifactId>
-			<version>1.0.0</version>
-			<optional>false</optional>
+			<version>1.3</version>
 		</dependency>
 		<!-- <dependency> <groupId>org.webguitoolkit.tools.document</groupId> <artifactId>wgt-document-repository</artifactId> 
 			<version>0.9.5</version> <optional>false</optional> </dependency> -->
 		<dependency>
-			<groupId>org.webguitoolkit.tools.document</groupId>
-			<artifactId>eh-document_store</artifactId>
-			<version>01.01.01</version>
+			<groupId>org.webguitoolkit.tools</groupId>
+			<artifactId>wgt-documentstore</artifactId>
+			<version>01.01.05</version>
+
 			<exclusions>
 				<exclusion>
 					<groupId>commons-logging</groupId>

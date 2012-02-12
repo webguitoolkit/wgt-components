@@ -30,6 +30,7 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.webguitoolkit.components.preview.PreviewView;
+import org.webguitoolkit.messagebox.MessageBox;
 import org.webguitoolkit.tools.document.IDirectory;
 import org.webguitoolkit.tools.document.IDocumentRepository;
 import org.webguitoolkit.tools.document.IFile;
@@ -68,9 +69,6 @@ import org.webguitoolkit.ui.controls.util.TextService;
 import org.webguitoolkit.ui.controls.util.conversion.ConvertUtil;
 import org.webguitoolkit.ui.controls.util.style.Style;
 
-import com.endress.infoserve.messagebox.IMessageAddress;
-import com.endress.infoserve.messagebox.IMessageBoxFactory;
-
 /**
  * The ExplorerView is intended to browse thru a DocumentStore (see DocumentStore API). It has a Windows-Explorer front-end with
  * the following functionality. <br>
@@ -91,10 +89,10 @@ import com.endress.infoserve.messagebox.IMessageBoxFactory;
  new FileMessageBoxFactory("D:\\test\\messages"));
 
  ExplorerView explorerView = new ExplorerView(factory, viewConnector, docs);
- * </code> If you do so it will just show the Directory / File structure. No context menus (beside the reload) are available. To
- * get the context menus in the tree and the File list you have to register them. There are a number of predefined context menus
- * available in the ExplorerView class. All above mentioned functions are implemented in those predefine context menus. You just
- * have to register them. <br>
+ * </code> If you do so it will just show the Directory / File structure. No
+ * context menus (beside the reload) are available. To get the context menus in the tree and the File list you have to register
+ * them. There are a number of predefined context menus available in the ExplorerView class. All above mentioned functions are
+ * implemented in those predefine context menus. You just have to register them. <br>
  * <code>
 
  explorerView.addTableContextMenu("app.view@View", explorerView.PREVIEW_FILE_LISTENER);
@@ -116,17 +114,17 @@ import com.endress.infoserve.messagebox.IMessageBoxFactory;
  }
  };
  explorerView.addTreeContextMenu("my hand-made menu", NULL_LISTENER);
- </code> There are some options to control the appearance of the ExplorerView in terms of size and so on. For details see the
- * JavaDoc of this class.<br>
+ </code> There are some options to control the
+ * appearance of the ExplorerView in terms of size and so on. For details see the JavaDoc of this class.<br>
  * The following resource bundle keys are used to translate the UI into other languages (under dev.) <br>
  * view.explorer.name for name column <br>
  * view.explorer.name for name column <br>
  * view.explorer.size for file size column <br>
  * view.explorer.lastModified for timestamp column<br>
  * view.explorer.type file type
- *
+ * 
  * @author peter
- *
+ * 
  */
 public class ExplorerView extends AbstractView {
 
@@ -172,7 +170,7 @@ public class ExplorerView extends AbstractView {
 	private Map<String, Integer> treeContextMenuEvents = new LinkedHashMap<String, Integer>();
 
 	private IDocumentRepository documentRepository;
-	private IMessageBoxFactory messageBoxFactory;
+	private MessageBox messageBox;
 
 	private static Log log = LogFactory.getLog(ExplorerView.class);
 
@@ -337,7 +335,7 @@ public class ExplorerView extends AbstractView {
 
 	/**
 	 * Helper method to create a valid resource key
-	 *
+	 * 
 	 * @param name
 	 * @return
 	 */
@@ -349,7 +347,7 @@ public class ExplorerView extends AbstractView {
 
 	/**
 	 * adds a context menu entry to the tree and registers the listener for this event.
-	 *
+	 * 
 	 * @return the event number
 	 */
 
@@ -365,7 +363,7 @@ public class ExplorerView extends AbstractView {
 
 	/**
 	 * adds a context menu entry to the table and registers the listener for this event.
-	 *
+	 * 
 	 * @return the event number
 	 */
 	public int addTableContextMenu(String titelKey, IServerEventListener listener) {
@@ -380,7 +378,7 @@ public class ExplorerView extends AbstractView {
 
 	/**
 	 * Set the height of the tree in the view
-	 *
+	 * 
 	 * @param treeHeight
 	 */
 	public void setTreeHeight(int treeHeight) {
@@ -389,7 +387,7 @@ public class ExplorerView extends AbstractView {
 
 	/**
 	 * Set the initial number of rows for the table
-	 *
+	 * 
 	 * @param treeRows
 	 */
 	public void setTableRows(int treeRows) {
@@ -398,7 +396,7 @@ public class ExplorerView extends AbstractView {
 
 	/**
 	 * Initialize the width of the table. This is evaluated during creation of the component.
-	 *
+	 * 
 	 * @param tableWidth
 	 */
 	public void setTableWidth(int tableWidth) {
@@ -407,7 +405,7 @@ public class ExplorerView extends AbstractView {
 
 	/**
 	 * Initialize the width of the table. This is evaluated during creation of the component.
-	 *
+	 * 
 	 * @param treeWidth
 	 */
 	public void setTreeWidth(int treeWidth) {
@@ -527,17 +525,18 @@ public class ExplorerView extends AbstractView {
 
 	public IServerEventListener PREVIEW_FILE_LISTENER = new IServerEventListener() {
 		public void handle(ServerEvent event) {
-			try{
-			IFile file = (IFile)event.getParameter(ExplorerView.EVENT_RESULT_PARAMETER);
+			try {
+				IFile file = (IFile)event.getParameter(ExplorerView.EVENT_RESULT_PARAMETER);
 
-			DynamicDialog dialog = new DynamicDialog(getPage());
-			dialog.setWidth(500);
-			dialog.setHeight(420);
-			dialog.setWindowTitle(file.getRelativePath());
+				DynamicDialog dialog = new DynamicDialog(getPage());
+				dialog.setWidth(500);
+				dialog.setHeight(420);
+				dialog.setWindowTitle(file.getRelativePath());
 
-			PreviewView previewView = new PreviewView(getFactory(), dialog.getWindow(), file.getRelativePath(), null);
-			previewView.show();
-			} catch(DocumentRepositoryException e){
+				PreviewView previewView = new PreviewView(getFactory(), dialog.getWindow(), file.getRelativePath(), null);
+				previewView.show();
+			}
+			catch (DocumentRepositoryException e) {
 				e.printStackTrace();
 			}
 		}
@@ -702,13 +701,13 @@ public class ExplorerView extends AbstractView {
 					for (Iterator<FileItem> it = fileItems.iterator(); it.hasNext();) {
 						FileItem fi = it.next();
 
-						//IFile file = directory.touch(fi.getName());
+						// IFile file = directory.touch(fi.getName());
 						IFile file = null;
 
 						if (file != null) {
 							try {
-								//file.writeStream(fi.getInputStream());
-								directory.createFile(fi.getName(),fi.getInputStream(),true);
+								// file.writeStream(fi.getInputStream());
+								directory.createFile(fi.getName(), fi.getInputStream(), true);
 							}
 							catch (Exception e) {
 								e.printStackTrace();
@@ -731,8 +730,7 @@ public class ExplorerView extends AbstractView {
 
 		public void handle(ServerEvent event) {
 			IDirectory directory = (IDirectory)event.getParameter(ExplorerView.EVENT_RESULT_PARAMETER);
-			IMessageAddress address = documentRepository.getMessageBoxFactory().newMessageAddress(
-					documentRepository.getAccessManager().getUserid());
+			String address = documentRepository.getAccessManager().getUserid();
 			directory.subscribe(address);
 		}
 	};
@@ -743,8 +741,7 @@ public class ExplorerView extends AbstractView {
 	public IServerEventListener UNSUBSCRIBE_LISTENER = new IServerEventListener() {
 		public void handle(ServerEvent event) {
 			IDirectory directory = (IDirectory)event.getParameter(ExplorerView.EVENT_RESULT_PARAMETER);
-			IMessageAddress address = documentRepository.getMessageBoxFactory().newMessageAddress(
-					documentRepository.getAccessManager().getUserid());
+			String address = documentRepository.getAccessManager().getUserid();
 			directory.unsubscribe(address);
 		}
 	};
